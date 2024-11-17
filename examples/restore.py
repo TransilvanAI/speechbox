@@ -11,7 +11,8 @@ MODEL_ID = "openai/whisper-tiny.en"
 NUM_BEAMS = 4
 
 REPO_ID = f"patrickvonplaten/restore_punctuation_{MODEL_ID.split('-')[-1].split('.')[0]}_num_beams_{NUM_BEAMS}"
-LOCAL_FILE = os.path.join("/home/patrick_huggingface_co/transcripts.csv")
+# make sure a data folder exists in the root of your project´
+LOCAL_FILE = os.path.join("./data/transcripts.csv")
 
 dataset = load_dataset("hf-internal-testing/librispeech_asr_dummy", "clean")["validation"]
 
